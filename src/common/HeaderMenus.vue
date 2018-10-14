@@ -1,50 +1,31 @@
 <template>
-    <div>
-      <el-row>
-        <el-button>默认按钮</el-button>
-        <el-button type="primary">主要按钮</el-button>
-        <el-button type="success">成功按钮</el-button>
-        <el-button type="info">信息按钮</el-button>
-        <el-button type="warning">警告按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
-       </el-row>
-
-      <el-row>
-        <el-button plain>朴素按钮</el-button>
-        <el-button type="primary" plain>主要按钮</el-button>
-        <el-button type="success" plain>成功按钮</el-button>
-        <el-button type="info" plain>信息按钮</el-button>
-        <el-button type="warning" plain>警告按钮</el-button>
-        <el-button type="danger" plain>危险按钮</el-button>
-      </el-row>
-
-      <el-row>
-        <el-button round>圆角按钮</el-button>
-        <el-button type="primary" round>主要按钮</el-button>
-        <el-button type="success" round>成功按钮</el-button>
-        <el-button type="info" round>信息按钮</el-button>
-        <el-button type="warning" round>警告按钮</el-button>
-        <el-button type="danger" round>危险按钮</el-button>
-      </el-row>
-
-      <el-row>
-        <el-button icon="el-icon-search" circle></el-button>
-        <el-button type="primary" icon="el-icon-edit" circle></el-button>
-        <el-button type="success" icon="el-icon-check" circle></el-button>
-        <el-button type="info" icon="el-icon-message" circle></el-button>
-        <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-        <el-button type="danger" icon="el-icon-delete" circle></el-button>
-      </el-row>
-    </div>
+  <el-menu
+    :default-active="activeIndex"
+    class="header-menus"
+    mode="horizontal"
+    text-color="#fff"
+    active-text-color="#ffd04b">
+    <el-menu-item index="1">处理中心</el-menu-item>
+    <el-menu-item index="3" disabled>消息中心</el-menu-item>
+    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+  </el-menu>
 </template>
 
 <script>
 export default {
-  name: 'HeaderMenus'
+  name: 'HeaderMenus',
+  data () {
+    return {
+      activeIndex: '4'
+    }
+  }
 }
 </script>
 
 <style lang='stylus' scoped>
-  div
-    font-size 2rem
-</style>
+  .header-menus
+    background url(http://p34qzbztu.bkt.clouddn.com/images/temp1.png)
+    position relative
+    height 52px
+    width 100%
+ </style>

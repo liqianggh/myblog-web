@@ -1,6 +1,9 @@
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <!--网页头部导航栏-->
+    <el-header>
+      <header-menus></header-menus>
+    </el-header>
     <el-main>Main</el-main>
     <el-footer>Footer</el-footer>
   </el-container>
