@@ -18,18 +18,19 @@ export default {
 <style lang='stylus' scoped>
   .el-row
     border solid #f00 1px
-    width 20rem
-    margin-left 0
-    margin-right 0
-    margin 0 auto
     width 23.5rem
+    min-height 18rem
     max-width 23.5rem
     min-width 15rem
+    margin 0 auto
     &last-child
       margin-bottom 0
     el-row el-container el-aside
       border solid red 1px
+      min-height 18rem
       width 16.5rem
     .el-main
       border solid green 1px
+      min-height 18rem
+
 </style>

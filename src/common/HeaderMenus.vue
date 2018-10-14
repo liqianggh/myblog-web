@@ -49,16 +49,15 @@ export default {
       float left;
       height $headerHeight
       line-height $headerHeight
-      margin 0;
-      border-bottom 2px solid transparent;
+      margin 0 0;
       color #909399;
     .header-menus
       position: relative;
       left: 0;
       margin: 0 auto;
-      display: block;
+      display: flex;
       overflow: hidden
-      height: 1.03rem
+      height: 100%
       clear: both
       background-color: #1a2d51 !important;
       font-size: 1rem;
@@ -68,8 +67,9 @@ export default {
       .el-menu-item.menu-item:hover
         background-color #1a2d51
      .el-menu-item.is-active
-      background-color: #1a2d51 !important
-      font-size .35rem
+       background-color: #1a2d51 !important
+       border none
+       font-size .35rem
     .header-menus-search
       padding-left: 1.423rem
     .header-menus-search:hover

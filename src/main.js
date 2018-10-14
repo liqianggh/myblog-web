@@ -8,7 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'styles/reset.css'
 // 1像素边框解决，兼容多倍屏幕
 import 'styles/border.css'
-
+// iconfont 引入
+import 'styles/iconfont.css'
 Vue.config.productionTip = false
 // todo 按需引入element-ui中的组件 以达到项目瘦身
 Vue.use(Element)

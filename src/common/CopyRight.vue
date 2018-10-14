@@ -1,5 +1,5 @@
 <template>
-  <div>HelloWorld</div>
+  <div class="copyright">Copyright © 2016-2018 Jann Lee. All Rights Reserved.</div>
 </template>
 
 <script>
@@ -9,5 +9,10 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-
-</style>
+  import "~/styles/variables.styl"
+  .el-footer > .copyright
+    width 100%
+    height:$headerHeight
+    margin 0 auto
+    color: #ffffff !important
+ </style>

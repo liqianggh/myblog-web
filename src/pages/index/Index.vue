@@ -36,11 +36,12 @@ export default {
 </script>
 <style lang='stylus' scoped>
   @import '~styles/variables.styl'
-  .el-header, .el-footer
+  .el-header
+    /*display flex*/
     color #333
-    text-align center
     line-height $headerHeight
-    height $headerHeight
+    text-align center
+    height $headerHeight !important
     padding 0 0
     font-family "Microsoft YaHei","微软雅黑",Arial,sans-serif
   .el-aside
@@ -54,4 +55,12 @@ export default {
     text-align center
     line-height 160px
     padding 0
+  .el-footer
+    /*display flex*/
+    color #fff
+    line-height $headerHeight
+    text-align center
+    height $headerHeight !important
+    background-color $bgColor
+    padding 0 0
 </style>
