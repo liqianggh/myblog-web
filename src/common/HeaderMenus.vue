@@ -1,14 +1,30 @@
 <template>
-  <el-menu
-    :default-active="activeIndex"
-    class="header-menus"
-    mode="horizontal"
-    text-color="#fff"
-    active-text-color="#ffd04b">
-    <el-menu-item index="1">处理中心</el-menu-item>
-    <el-menu-item index="3" disabled>消息中心</el-menu-item>
-    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-  </el-menu>
+  <div class="el-menu-wrapper">
+    <el-menu
+      :default-active="activeIndex"
+      class="header-menus"
+      mode="horizontal"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+    >
+      <el-menu-item class="menu-item" index="1">首页</el-menu-item>
+      <el-menu-item class="menu-item" index="2">技术分享</el-menu-item>
+      <el-menu-item class="menu-item" index="3">生活笔记</el-menu-item>
+      <el-menu-item class="menu-item" index="4">胡说八道</el-menu-item>
+      <el-menu-item class="menu-item" index="5">我的书单</el-menu-item>
+      <el-menu-item class="menu-item" index="6">资源分享</el-menu-item>
+      <el-menu-item class="menu-item" index="7">留言板</el-menu-item>
+      <el-menu-item class="menu-item" index="8">关于我</el-menu-item>
+      <el-menu-item class="menu-item header-menus-search" index="9"  >
+        <el-input
+          placeholder="请输入内容"
+          v-model="searchKeywords"
+          clearable>
+        </el-input>
+        <i class="el-icon-search"></i>
+      </el-menu-item>
+    </el-menu>
+  </div>
 </template>
 
 <script>
@@ -16,16 +32,54 @@ export default {
   name: 'HeaderMenus',
   data () {
     return {
-      activeIndex: '4'
+      activeIndex: '4',
+      searchKeywords: ''
     }
   }
 }
 </script>
 
 <style lang='stylus' scoped>
-  .header-menus
-    background url(http://p34qzbztu.bkt.clouddn.com/images/temp1.png)
-    position relative
-    height 52px
-    width 100%
- </style>
+  @import "~styles/variables.styl"
+  .el-menu-wrapper
+     max-width: 39rem
+     width: 100%
+     background: url(http://p34qzbztu.bkt.clouddn.com/images/temp1.png);
+   .el-menu--horizontal>.el-menu-item
+      float left;
+      height $headerHeight
+      line-height $headerHeight
+      margin 0;
+      border-bottom 2px solid transparent;
+      color #909399;
+    .header-menus
+      position: relative;
+      left: 0;
+      margin: 0 auto;
+      display: block;
+      overflow: hidden
+      height: 1.03rem
+      clear: both
+      background-color: #1a2d51 !important;
+      font-size: 1rem;
+      max-width: 1180px;
+      .menu-item
+        font-size .35rem
+      .el-menu-item.menu-item:hover
+        background-color #1a2d51
+     .el-menu-item.is-active
+      background-color: #1a2d51 !important
+      font-size .35rem
+    .header-menus-search
+      padding-left: 1.423rem
+    .header-menus-search:hover
+      border none
+      height $headerHeight
+      background-color #25a4bb
+    .header-menus-search.is-active
+      border none
+    .el-icon-search
+      font-size 0.5rem
+      font-weight bold
+      color #ffffff
+</style>
