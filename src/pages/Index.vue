@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <h1>{{msg}}</h1>
-   </div>
+  <header-menus></header-menus>
 </template>
 
 <script>
+import HeaderMenus from 'common/HeaderMenus'
 export default {
   name: 'Index',
+  components: {
+    HeaderMenus
+  },
   data () {
     return {
       msg: 'Welcome!'
