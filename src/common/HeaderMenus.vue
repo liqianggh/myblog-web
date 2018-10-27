@@ -42,11 +42,14 @@ export default {
 <style lang='stylus' scoped>
   @import "~styles/variables.styl"
   .el-menu-wrapper
-     max-width: 39rem
-     width: 100%
-     background: url(http://p34qzbztu.bkt.clouddn.com/images/temp1.png);
+    display block
+    zoom 1
+    max-width 39rem
+    width 100%
+     /*background: url(http://p34qzbztu.bkt.clouddn.com/images/temp1.png);*/
+    background $bgColor
    .el-menu--horizontal>.el-menu-item
-      float left;
+      float left
       height $headerHeight
       line-height $headerHeight
       margin 0 0;
@@ -59,15 +62,15 @@ export default {
       overflow: hidden
       height: 100%
       clear: both
-      background-color: #1a2d51 !important;
+      background-color: $bgColor !important;
       font-size: 1rem;
       max-width: 1180px;
       .menu-item
         font-size .35rem
       .el-menu-item.menu-item:hover
-        background-color #1a2d51
+        background-color $menuHoverColor
      .el-menu-item.is-active
-       background-color: #1a2d51 !important
+       background-color: $menuHoverColor !important
        border none
        font-size .35rem
     .header-menus-search
@@ -81,5 +84,5 @@ export default {
     .el-icon-search
       font-size 0.5rem
       font-weight bold
-      color #ffffff
+      color $menuColor
 </style>

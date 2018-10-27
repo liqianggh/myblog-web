@@ -6,25 +6,27 @@
     </el-header>
     <el-main>
       <main-header></main-header>
-      <main-left></main-left>
-    </el-main>
+      <main-container>
+      </main-container>
+     </el-main>
     <el-footer>
       <copy-right></copy-right>
     </el-footer>
   </el-container>
+
 </template>
 
 <script>
 import HeaderMenus from 'common/HeaderMenus'
 import MainHeader from './components/MainHeader'
-import MainLeft from './components/MainLeft'
+import MainContainer from './components/MainContainer'
 import CopyRight from 'common/CopyRight'
 export default {
   name: 'Index',
   components: {
     HeaderMenus,
     MainHeader,
-    MainLeft,
+    MainContainer,
     CopyRight
   },
   data () {
@@ -53,7 +55,7 @@ export default {
     background-color #E9EEF3
     color #333
     text-align center
-    line-height 160px
+    /*line-height 160px*/
     padding 0
   .el-footer
     /*display flex*/

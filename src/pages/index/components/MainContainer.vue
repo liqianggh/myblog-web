@@ -2,16 +2,24 @@
   <div>
     <el-row :gutter="0">
       <el-container>
-        <el-aside class="left-aside" style="width: 16.5rem;">Aside</el-aside>
-        <el-main>Main</el-main>
+        <el-aside class="left-aside" style="width: 16.5rem;">
+          <blog-item></blog-item>
+        </el-aside>
+        <el-main>
+            <div>right</div>
+        </el-main>
         </el-container>
     </el-row>
   </div>
 </template>
 
 <script>
+import BlogItem from 'common/BlogListItem.vue'
 export default {
-  name: 'MainLeft'
+  name: 'MainContainer',
+  components: {
+    BlogItem
+  }
 }
 </script>
 

@@ -3,7 +3,8 @@ import App from './App'
 import router from './router'
 // 整合element-ui
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import '../src/assets/styles/index.css'
+// import 'element-ui/lib/theme-chalk/index.css'
 // 初始化css
 import 'styles/reset.css'
 // 1像素边框解决，兼容多倍屏幕
