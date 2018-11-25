@@ -5,12 +5,25 @@ import router from './router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 初始化css
-import 'styles/reset.css'
+// import 'styles/reset.css'
 // 1像素边框解决，兼容多倍屏幕
-import 'styles/border.css'
+// import 'styles/border.css'
 
+import 'styles/index.css'
+import 'styles/info.css'
+import 'styles/infopic.css'
+import 'styles/base.css'
+import 'styles/m.css'
+// import 'js/jquery.min.js'
+// import 'js/comm.js'
+// import 'js/page.js'
+// import 'js/scrollReveal.js'
+// import 'js/piccontent.min.js'
+// import 'js/page2.js'
+// import 'js/hc-sticky.js'
+// import 'js/modernizr.js'
 Vue.config.productionTip = false
-// todo 按需引入element-ui中的组件 以达到项目瘦身
+
 Vue.use(Element)
 /* eslint-disable no-new */
 new Vue({

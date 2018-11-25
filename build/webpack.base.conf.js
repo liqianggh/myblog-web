@@ -38,7 +38,9 @@ module.exports = {
       '@': resolve('src'),
       // 给样式和公共部分包配置别名
       'styles': resolve('src/assets/styles'),
-      'common': resolve('src/common')
+      'js': resolve('src/assets/js'),
+      'common': resolve('src/common'),
+      'data': resolve('static/')
     }
   },
   module: {
