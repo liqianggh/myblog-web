@@ -4,7 +4,9 @@
       <header-menus ref="header_child"></header-menus>
       <article>
         <left-side :recommendList="recommendList" :categoryList="categoryList" ref="left_side"></left-side>
-         <component :blogResult="blogResult" ref="main_component" v-bind:is="currentTabComponent"></component>
+        <!--<main class="r_box">-->
+            <component :blogResult="blogResult" ref="main_component" v-bind:is="currentTabComponent"></component>
+        <!--</main>-->
         <!--<article-list></article-list>-->
       </article>
       <copy-right ref="copy_right"></copy-right>
@@ -18,6 +20,7 @@ import ArticleList from './ArticleList'
 import CopyRight from 'common/CopyRight'
 import CommentList from 'common/CommentList'
 import AboutMe from 'common/AboutMe'
+import ArticleInfo from '../info/ArticleInfo'
 import axios from 'Axios'
 export default {
   name: 'Index',
@@ -27,12 +30,13 @@ export default {
     ArticleList,
     CopyRight,
     CommentList,
-    AboutMe
+    AboutMe,
+    ArticleInfo
   },
   data () {
     return {
       msg: 'Welcome!',
-      currentTabComponent: 'ArticleList',
+      currentTabComponent: 'ArticleInfo',
       newScrollPosition: 0,
       lastScrollPosition: 0,
       blogResult: null,

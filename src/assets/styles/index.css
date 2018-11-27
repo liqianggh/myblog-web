@@ -55,6 +55,8 @@ a.curPage { color: #19585d; font-weight: bold; }
 .tags a { background: #F4650E; padding: 3px 8px; margin: 0 5px 0 0; color: #fff; }
 .tags { margin: 10px 0; }
 .infosbox img { max-width: 100%; height: auto; width: 100% }
+.infosbox h2 { border-bottom: #000 2px solid; line-height: 40px; font-size: 14px; padding-left: 10px; color: #000 }
+
 .share { padding: 20px; }
 .nextinfo { line-height: 24px; width: 100%; overflow: hidden; margin: 20px 0 }/*��һƪ��һƪ*/
 .nextinfo p { padding: 4px 10px; border-radius: 5px; }
@@ -74,6 +76,9 @@ p.fbtime { color: #000; }
     overflow: hidden;
     white-space: nowrap; }
 p.fbinfo { margin: 10px 0; }
+div.fblike{
+  margin: -10px 0;
+  float: right;}
 .fb ul { margin: 10px 10px; padding: 10px 10px 10px 70px; border-bottom: #ececec 1px solid; }
 .fb:nth-child(8n-7) ul { background: url(../../../static/images/tx10.jpg) no-repeat top 20px left 10px; }
 .fb:nth-child(8n-6) ul { background: url(../../../static/images/tx9.jpg) no-repeat top 20px left 10px; }
