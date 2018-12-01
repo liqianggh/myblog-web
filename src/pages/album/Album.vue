@@ -1,7 +1,9 @@
 <template>
    <div>
      <header-menus></header-menus>
-     <album-list></album-list>
+     <article>
+      <album-list></album-list>
+     </article>
      <copy-right></copy-right>
   </div>
 </template>

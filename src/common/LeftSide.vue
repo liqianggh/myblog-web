@@ -31,31 +31,21 @@
       <div class="fenlei">
         <h2>文章分类</h2>
         <ul>
-          <!--<li><a href="/">学无止境（33）</a></li>-->
-          <!--<li><a href="/">日记（19）</a></li>-->
-          <!--<li><a href="/">慢生活（520）</a></li>-->
-          <!--<li><a href="/">美文欣赏（40）</a></li>-->
-           <li v-for="(item, index) in categoryList" :key="index"><a href="/">{{item.tagName}}（{{item.count}}）</a></li>
+           <router-link tag="li" :to="'/blogs/category/'+ item.id" v-for="(item, index) in sideInitData.categoryList" :key="index"><a href="/">{{item.tagName}}（{{item.count}}）</a></router-link>
         </ul>
       </div>
       <div class="tuijian">
         <h2>站长推荐</h2>
         <ul>
-          <!--<li><a href="/">你是什么人便会遇上什么人</a></li>-->
-          <!--<li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>-->
-          <!--<li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>-->
-          <!--<li><a href="/">个人博客模板《绅士》后台管理</a></li>-->
-          <!--<li><a href="/">你是什么人便会遇上什么人</a></li>-->
-          <!--<li><a href="/">帝国cms 列表页调用子栏目，没有则不显示栏目名称</a></li>-->
-          <!--<li><a href="/">第二届 优秀个人博客模板比赛参选活动</a></li>-->
-          <!--<li><a href="/">个人博客模板《绅士》后台管理</a></li>-->
-          <li v-for="(item, index) in recommendList" :key="index"><a href="/">{{item.title}}</a></li>
+          <li v-for="(item, index) in sideInitData.recommendList" :key="index"><router-link tag ='a' :to="'/blog/detail/'+item.id">{{item.title}}</router-link></li>
         </ul>
       </div>
       <div class="links">
         <h2>友情链接</h2>
         <ul>
-          <a href="http://www.yangqq.com">李强个人博客</a> <a href="http://www.yangqq.com">李强博客</a>
+          <a href="http://www.mycookies.cn">老版个人博客</a>
+          <a href="http://www.jiangxindc.com">AiLinkLife</a>
+
         </ul>
       </div>
     </div>
@@ -68,19 +58,48 @@
   </aside>
 </template>
 <script>
+import axios from 'Axios'
 export default {
   name: 'LeftSide',
   props: {
-    categoryList: {
-      type: Array
-    },
-    recommendList: {
-      type: Array
+    sideInitDataParam: {
+      recommendList: [],
+      categoryList: []
     }
+  },
+  data () {
+    return {
+      sideInitData: {
+        recommendList: [],
+        categoryList: []
+      }
+    }
+  },
+  mounted () {
+    this.dataInit()
   },
   methods: {
     fixedPosition (_newScrollPosition, _lastScrollPosition) {
       console.log(_newScrollPosition + '  ' + _lastScrollPosition)
+    },
+    dataInit () {
+      if (this.sideInitDataParam) {
+        this.sideInitData = this.sideInitDataParam
+        localStorage.setItem('sideInitData', this.sideInitData)
+        return
+      }
+      var sideData = localStorage.getItem('sideInitData')
+      console.log(sideData.recommendList + '123')
+      if (sideData != null && (sideData.recommendList != null || sideData.categoryList)) {
+        this.sideInitData = sideData
+        alert(12)
+      } else {
+        axios.get('http://localhost:8088/blogs/left').then(result => {
+          this.sideInitData.categoryList = result.data.data.categoryList
+          this.sideInitData.recommendList = result.data.data.recommendList
+          console.log(result.data.data)
+        })
+      }
     }
   }
 }

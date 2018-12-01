@@ -1,13 +1,10 @@
 <template>
      <!--网页头部导航栏-->
     <div>
-      <header-menus ref="header_child"></header-menus>
+      <header-menus @changeMenus="changeMenus" ref="header_child"></header-menus>
       <article>
-        <left-side :recommendList="recommendList" :categoryList="categoryList" ref="left_side"></left-side>
-        <!--<main class="r_box">-->
-            <component :blogResult="blogResult" ref="main_component" v-bind:is="currentTabComponent"></component>
-        <!--</main>-->
-        <!--<article-list></article-list>-->
+        <left-side :sideInitDataParam="sideInitData"></left-side>
+        <article-list :blogResult="blogResult"></article-list>
       </article>
       <copy-right ref="copy_right"></copy-right>
     </div>
@@ -16,11 +13,8 @@
 <script>
 import HeaderMenus from 'common/HeaderMenus'
 import LeftSide from 'common/LeftSide'
-import ArticleList from './ArticleList'
+import ArticleList from '../../common/ArticleList'
 import CopyRight from 'common/CopyRight'
-import CommentList from 'common/CommentList'
-import AboutMe from 'common/AboutMe'
-import ArticleInfo from '../info/ArticleInfo'
 import axios from 'Axios'
 export default {
   name: 'Index',
@@ -28,47 +22,49 @@ export default {
     HeaderMenus,
     LeftSide,
     ArticleList,
-    CopyRight,
-    CommentList,
-    AboutMe,
-    ArticleInfo
+    CopyRight
   },
   data () {
     return {
       msg: 'Welcome!',
-      currentTabComponent: 'ArticleInfo',
+      currentTabComponent: 'ArticleList',
+      currentLeftComponent: 'LeftSide',
       newScrollPosition: 0,
       lastScrollPosition: 0,
       blogResult: null,
-      categoryList: null,
-      recommendList: null
+      sideInitData: {
+        categoryList: null,
+        recommendList: null
+      }
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
+    // window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
     axios.get('http://localhost:8088/blogs/index').then(result => {
       this.blogResult = result.data.data.blogList
-      this.categoryList = result.data.data.categoryList
-      this.recommendList = result.data.data.recommendList
-      console.log(result.data.data.recommendList)
+      this.sideInitData.categoryList = result.data.data.categoryList
+      this.sideInitData.recommendList = result.data.data.recommendList
     })
   },
   destroyed () {
-    window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
+    // window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
   },
   methods: {
     dataInit () {
       axios.get('/api/').then(response => (this.index()))
     },
     handleScroll () {
-      var _lastScrollPosition = this.lastScrollPosition
-      var _newScrollPosition = this.newScrollPosition
-      _lastScrollPosition = window.scrollY
-      this.$refs.header_child.handleScroll(_newScrollPosition, _lastScrollPosition)
-      this.$refs.left_side.fixedPosition(_newScrollPosition, _lastScrollPosition)
-      // this.$refs..handleCdTop(_lastScrollPosition)
-      this.$refs.copy_right.handleCdTop(_lastScrollPosition)
-      this.newScrollPosition = _lastScrollPosition
+      // var _lastScrollPosition = this.lastScrollPosition
+      // var _newScrollPosition = this.newScrollPosition
+      // _lastScrollPosition = window.scrollY
+      // this.$refs.header_child.handleScroll(_newScrollPosition, _lastScrollPosition)
+      // this.$refs.copy_right.handleCdTop(_lastScrollPosition)
+      // // this.$refs.left_side.fixedPosition(_newScrollPosition, _lastScrollPosition)
+      // this.newScrollPosition = _lastScrollPosition
+    },
+    changeMenus (data) {
+      this.currentTabComponent = this.mainComponentArray[data]
+      this.currentLeftComponent = 'LeftSide'
     },
     // 节流函数
     throttle (func, delay) {
