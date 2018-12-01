@@ -3,8 +3,11 @@ import Router from 'vue-router'
 import Index from '@/pages/index/Index'
 import Blog from '@/pages/info/Blog'
 import Album from '@/pages/info/Album'
-import AlbumList from '@/pages/album/Album'
-import Comments from '@/pages/comment/Comment'
+import Albums from '@/pages/album/Album'
+import Category from '@/pages/category/Category'
+import Tag from '@/pages/category/Tag'
+import Comments from '@/pages/comments/Comments'
+import AboutMe from '@/pages/about/About'
 Vue.use(Router)
 
 export default new Router({
@@ -15,22 +18,42 @@ export default new Router({
       component: Index
     },
     {
-      path: '/blog',
+      path: '/index',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/blog/detail/:id',
       name: 'Blog',
       component: Blog
     },
     {
-      path: '/album',
+      path: '/blogs/category/:id',
+      name: 'Category',
+      component: Category
+    },
+    {
+      path: '/blogs/tag/:id',
+      name: 'Tag',
+      component: Tag
+    },
+    {
+      path: '/albums',
+      name: 'Albums',
+      component: Albums
+    },
+    {
+      path: '/albums/detail/:id',
       name: 'Album',
       component: Album
     },
     {
-      path: '/albums',
-      name: 'AlbumList',
-      component: AlbumList
+      path: '/about',
+      name: 'About',
+      component: AboutMe
     },
     {
-      path: '/comments',
+      path: '/comments/:id',
       name: 'Comments',
       component: Comments
     }

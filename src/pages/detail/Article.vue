@@ -12,21 +12,27 @@
 </template>
 
 <script>
-import ArticleInfo from '../detail/ArticleInfo'
 import HeaderMenus from 'common/HeaderMenus'
 import BlogLeft from 'common/BlogLeft'
+import CopyRight from 'common/CopyRight'
 import CommentList from 'common/CommentList'
+import ArticleInfo from './ArticleInfo'
 
 export default {
-  name: 'Blog',
+  name: 'Comment',
   components: {
-    BlogLeft,
     HeaderMenus,
-    ArticleInfo,
-    CommentList
+    BlogLeft,
+    CommentList,
+    CopyRight,
+    ArticleInfo
+  },
+  data () {
+    return {
+      msg: 'Welcome!'
+    }
   }
 }
 </script>
-
 <style lang='stylus'>
 </style>

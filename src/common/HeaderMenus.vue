@@ -5,9 +5,9 @@
       <h2 ref="mnavh" v-bind:class="{'open':!isShowNav}" @click="handleClick" id="mnavh"><span class="navicon"></span>
       </h2>
       <ul ref="startlist" id="starlist">
-        <li v-for="item in navs" :key="item.url">
-          <a href="item.url" :id="selected===true?'selected':''">{{item.content}}</a>
-        </li>
+        <router-link tag="li" :to="item.url" v-for="(item, index) in navs" :itemIndex="index" :key="index" :id="item.isSelected==true?'selected':''">
+          {{item.content}}
+        </router-link>
       </ul>
     </nav>
   </header>
@@ -31,28 +31,28 @@ export default {
       curPosition: this.selectedId,
       navs: [
         {
-          url: 'index.html',
+          url: '/index',
           content: '网站首页',
           isSelected: false
         },
         {
-          url: 'index.html',
-          content: '我的相册',
+          url: '/blogs/category/1',
+          content: '文章',
           isSelected: false
         },
         {
-          url: 'index.html',
-          content: '我的日记',
-          isSelected: false
-        },
-        {
-          url: 'index.html',
+          url: '/about',
           content: '关于我',
           isSelected: false
         },
         {
-          url: 'index.html',
-          content: '内容页',
+          url: '/albums',
+          content: '相册',
+          isSelected: false
+        },
+        {
+          url: '/comments/0',
+          content: '留言',
           isSelected: false
         }
       ]
@@ -66,6 +66,7 @@ export default {
     }
   },
   mounted () {
+    this.navs[this.selectedId].isSelected = true
   },
   unmounted () {
     this.destroyed()
@@ -96,6 +97,16 @@ export default {
       } else {
         _startlist.style.display = 'none'
       }
+    },
+    changeMenus (index) {
+      this.$emit('changeMenus', index)
+      if (this.curPosition) {
+        this.navs[this.curPosition].isSelected = false
+      } else {
+        this.navs[0].isSelected = false
+      }
+      this.curPosition = index
+      this.navs[index].isSelected = true
     }
   }
 }

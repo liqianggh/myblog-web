@@ -2,31 +2,34 @@
   <div>
     <header-menus></header-menus>
     <article>
-      <blog-left></blog-left>
-      <main>
-        <article-info></article-info>
-        <comment-list></comment-list>
-      </main>
+      <left-side></left-side>
+      <detail></detail>
     </article>
   </div>
 </template>
 
 <script>
-import ArticleInfo from '../detail/ArticleInfo'
 import HeaderMenus from 'common/HeaderMenus'
-import BlogLeft from 'common/BlogLeft'
+import CopyRight from 'common/CopyRight'
 import CommentList from 'common/CommentList'
+import Detail from './Detail'
+import LeftSide from 'common/LeftSide'
 
 export default {
-  name: 'Blog',
+  name: 'Comment',
   components: {
-    BlogLeft,
+    LeftSide,
     HeaderMenus,
-    ArticleInfo,
-    CommentList
+    CommentList,
+    CopyRight,
+    Detail
+  },
+  data () {
+    return {
+      msg: 'Welcome!'
+    }
   }
 }
 </script>
-
 <style lang='stylus'>
 </style>

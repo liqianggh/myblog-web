@@ -1,10 +1,13 @@
 <template>
   <main class="r_box">
-    <li v-for="(item, index) in blogResult.list" :key="index"><i><a href="/"><img
-      src="../../../static/images/1.jpg"></a></i>
-      <h3><a href="/">{{item.title}}</a></h3>
-      <p>{{item.summary}}</p>
-    </li>
+    <router-link tag="li" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogResult.list" :key="index">
+      <slot v-bind="item">
+        <i><a :href="'/blog/detail/'+item.id"><img
+          src="../../static/images/1.jpg"></a></i>
+        <h3><a :href="'/blog/detail/'+item.id">{{item.title}}</a></h3>
+        <p >{{item.summary}}</p>
+      </slot>
+    </router-link>
     <paginate
       v-model="currentPage"
       active-class="curPage"
@@ -37,7 +40,9 @@ export default {
     }
   },
   data () {
-    return {}
+    return {
+      currentPage: 1
+    }
   },
   methods: {
     goToPage (pageNum) {
@@ -47,7 +52,6 @@ export default {
         }
       }).then(result => {
         this.blogResult = result.data.data
-        console.log(this.blogResult)
       })
     }
   }
