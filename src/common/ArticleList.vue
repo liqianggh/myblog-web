@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     goToPage (pageNum) {
-      axios.get('http://localhost:8088/blogs', {
+      axios.get('/api/blogs', {
         params: {
           pageNum: pageNum,
           categoryId: this.categoryId
