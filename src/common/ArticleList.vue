@@ -1,6 +1,6 @@
 <template>
   <main class="r_box">
-    <router-link tag="li" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogResult.list" :key="index">
+    <router-link tag="li" :name="index" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogResult.list" :key="index">
       <slot v-bind="item">
         <i><router-link tag="a" :href="'/blog/detail/'+item.id"><img
           src="../../static/images/1.jpg"></router-link></i>
@@ -40,7 +40,7 @@ export default {
       defaultValue: null
     },
     categoryId: {
-      type: Number,
+      type: String,
       defaultValue: null
     }
   },

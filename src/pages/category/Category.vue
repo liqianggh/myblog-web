@@ -3,7 +3,7 @@
   <div>
     <header-menus @changeMenus="changeMenus" ref="header_child"></header-menus>
     <article>
-        <blog-left></blog-left>
+        <left-side></left-side>
         <!--<component :blogResult="blogResult" ref="main_component" v-bind:is="currentTabComponent"></component>-->
        <article-list :categoryId="category" :blogResult="blogResult"></article-list>
     </article>
@@ -13,7 +13,7 @@
 
 <script>
 import HeaderMenus from 'common/HeaderMenus'
-import BlogLeft from 'common/BlogLeft'
+import LeftSide from 'common/LeftSide'
 import CopyRight from 'common/CopyRight'
 import CommentList from 'common/CommentList'
 import ArticleList from '../../common/ArticleList'
@@ -22,7 +22,7 @@ export default {
   name: 'Comment',
   components: {
     HeaderMenus,
-    BlogLeft,
+    LeftSide,
     CommentList,
     CopyRight,
     ArticleList
@@ -35,21 +35,35 @@ export default {
   },
   mounted () {
     let id = this.$route.params.id
-    this.getArticleListByCategoryId(id)
+    let type = this.$route.query.type
+    this.getArticleListByCategoryId(id, type)
+  },
+  watch: {
+    $route (to, from) {
+      let id = this.$route.params.id
+      let type = this.$route.query.type
+      this.getArticleListByCategoryId(id, type)
+    }
   },
   methods: {
-    getArticleListByCategoryId (id) {
+    getArticleListByCategoryId (id, type) {
       if (id === null || id < 0) {
         alert('参数错误!')
         return
       }
       var url = 'http://localhost:8088/blogs'
-      if (id > 0) {
-        url += ('?categoryId=' + id)
+      if (type) {
+        url += ('?tagId=' + id)
+        url += '&type=2'
+      } else {
+        if (id !== '0') {
+          url += ('?categoryId=' + id)
+        }
       }
       axios.get(url).then(result => {
         this.blogResult = result.data.data
         this.category = id
+        console.log(this.blogResult)
       })
     }
   }

@@ -40,11 +40,11 @@ export default {
           content: '文章',
           isSelected: false
         },
-        {
-          url: '/albums',
-          content: '相册',
-          isSelected: false
-        },
+        // {
+        //   url: '/albums',
+        //   content: '相册',
+        //   isSelected: false
+        // },
         {
           url: '/comments/0',
           content: '留言',

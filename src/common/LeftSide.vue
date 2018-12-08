@@ -7,17 +7,17 @@
         <p><b>李强</b>，一个不羁的码农。</p>
       </ul>
     </div>
-    <div class="wdxc">
-      <h2>我的相册</h2>
-      <ul>
-        <li><a href="/"><img src="../../static/images/7.jpg"></a></li>
-        <li><a href="/"><img src="../../static/images/8.jpg"></a></li>
-        <li><a href="/"><img src="../../static/images/9.jpg"></a></li>
-        <li><a href="/"><img src="../../static/images/10.jpg"></a></li>
-        <li><a href="/"><img src="../../static/images/11.jpg"></a></li>
-        <li><a href="/"><img src="../../static/images/12.jpg"></a></li>
-      </ul>
-    </div>
+    <!--<div class="wdxc">-->
+      <!--<h2>我的相册</h2>-->
+      <!--<ul>-->
+        <!--<li><a href="/"><img src="../../static/images/7.jpg"></a></li>-->
+        <!--<li><a href="/"><img src="../../static/images/8.jpg"></a></li>-->
+        <!--<li><a href="/"><img src="../../static/images/9.jpg"></a></li>-->
+        <!--<li><a href="/"><img src="../../static/images/10.jpg"></a></li>-->
+        <!--<li><a href="/"><img src="../../static/images/11.jpg"></a></li>-->
+        <!--<li><a href="/"><img src="../../static/images/12.jpg"></a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
     <div ref="fix_postion">
       <div class="search">
         <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
@@ -34,10 +34,22 @@
            <router-link tag="li" :to="'/blogs/category/'+ item.id" v-for="(item, index) in sideInitData.categoryList" :key="index"><a href="/">{{item.tagName}}（{{item.count}}）</a></router-link>
         </ul>
       </div>
+      <div class="cloud">
+        <h2>标签云</h2>
+        <ul>
+          <router-link tag="a" v-for="(item,index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tagName}}</router-link>
+        </ul>
+      </div>
       <div class="tuijian">
         <h2>站长推荐</h2>
         <ul>
           <li v-for="(item, index) in sideInitData.recommendList" :key="index"><router-link tag ='a' :to="'/blog/detail/'+item.id">{{item.title}}</router-link></li>
+        </ul>
+      </div>
+      <div class="tuijian">
+        <h2>点击排行</h2>
+        <ul>
+          <li v-for="(item, index) in sideInitData.clickRankList" :key="index"><router-link tag ='a' :to="'/blog/detail/'+item.id">{{item.title}}</router-link></li>
         </ul>
       </div>
       <div class="links">
@@ -71,7 +83,9 @@ export default {
     return {
       sideInitData: {
         recommendList: [],
-        categoryList: []
+        categoryList: [],
+        clickRankList: [],
+        tagList: []
       }
     }
   },
@@ -92,11 +106,12 @@ export default {
       console.log(sideData.recommendList + '123')
       if (sideData != null && (sideData.recommendList != null || sideData.categoryList)) {
         this.sideInitData = sideData
-        alert(12)
       } else {
-        axios.get('http://localhost:8088/blogs/left').then(result => {
+        axios.get('/api/blogs/left').then(result => {
           this.sideInitData.categoryList = result.data.data.categoryList
           this.sideInitData.recommendList = result.data.data.recommendList
+          this.sideInitData.tagList = result.data.data.tagList
+          this.sideInitData.clickRankList = result.data.data.clickRankList
           console.log(result.data.data)
         })
       }

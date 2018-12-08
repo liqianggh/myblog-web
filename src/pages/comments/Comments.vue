@@ -2,9 +2,9 @@
   <div>
     <header-menus></header-menus>
     <article>
-      <blog-left></blog-left>
+      <left-side></left-side>
       <main>
-         <comment-list></comment-list>
+        <comment-list></comment-list>
       </main>
     </article>
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 import HeaderMenus from 'common/HeaderMenus'
-import BlogLeft from 'common/BlogLeft'
+import LeftSide from 'common/LeftSide'
 import CopyRight from 'common/CopyRight'
 import CommentList from 'common/CommentList'
 
@@ -20,7 +20,7 @@ export default {
   name: 'Comment',
   components: {
     HeaderMenus,
-    BlogLeft,
+    LeftSide,
     CommentList,
     CopyRight
   },

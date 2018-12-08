@@ -2,7 +2,7 @@
   <div>
     <header-menus></header-menus>
     <article>
-      <blog-left></blog-left>
+      <left-side></left-side>
       <main>
         <article-info :id="id" :articleData="articleData"></article-info>
       </main>
@@ -12,15 +12,15 @@
 
 <script>
 import HeaderMenus from 'common/HeaderMenus'
-import BlogLeft from 'common/BlogLeft'
 import CopyRight from 'common/CopyRight'
 import ArticleInfo from './ArticleInfo'
 import axios from 'Axios'
+import LeftSide from 'common/LeftSide'
 export default {
   name: 'Comment',
   components: {
+    LeftSide,
     HeaderMenus,
-    BlogLeft,
     CopyRight,
     ArticleInfo
   },
@@ -46,7 +46,6 @@ export default {
       axios.get('http://localhost:8088/blogs/' + id).then(result => {
         if (result) {
           this.articleData = result.data.data
-          console.log(this.articleData)
         }
       })
     }

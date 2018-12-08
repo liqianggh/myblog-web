@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="share">
-        <p class="diggit"><button class="dianzan diggit" v-on:click="voteArticle"> 很赞哦！({{articleData.likeCount}})</button></p>
+        <p class="diggit"><button class="dianzan diggit" v-on:click="voteArticle(articleData.id)"> 很赞哦！({{articleData.likeCount}})</button></p>
       </div>
       <div class="nextinfo">
         <p>上一篇：<router-link tag="a" :to="'/blog/detail/'+articleData.last.id">{{articleData.last.title}}</router-link></p>
@@ -50,12 +50,24 @@ export default {
   },
   mounted () {
   },
+  watch: {
+    $route (to, from) {
+      let id = this.$route.params.id
+      this.initData(id)
+    }
+  },
   methods: {
-    voteArticle () {
-      axios.put('http://localhost:8088/blogs/count/' + this.id + '?type=like').then(result => {
+    voteArticle (id) {
+      axios.put('http://localhost:8088/blogs/count/' + id + '?type=like').then(result => {
         if (result.data.status === 1000) {
-          console.log('点赞成功!')
           this.articleData.likeCount = this.articleData.likeCount + 1
+        }
+      })
+    },
+    initData (id) {
+      axios.get('/api/blogs/' + id).then(result => {
+        if (result) {
+          this.articleData = result.data.data
         }
       })
     }

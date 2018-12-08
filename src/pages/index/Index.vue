@@ -33,34 +33,38 @@ export default {
       lastScrollPosition: 0,
       blogResult: null,
       sideInitData: {
-        categoryList: null,
-        recommendList: null
+        recommendList: [],
+        categoryList: [],
+        clickRankList: [],
+        tagList: []
       }
     }
   },
   mounted () {
-    // window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
+    window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
     axios.get('http://localhost:8088/blogs/index').then(result => {
       this.blogResult = result.data.data.blogList
       this.sideInitData.categoryList = result.data.data.categoryList
       this.sideInitData.recommendList = result.data.data.recommendList
+      this.sideInitData.tagList = result.data.data.tagList
+      this.sideInitData.clickRankList = result.data.data.clickRankList
     })
   },
   destroyed () {
-    // window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
+    window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
   },
   methods: {
     dataInit () {
-      axios.get('/api/').then(response => (this.index()))
+      // axios.get('/api/').then(response => (this.index()))
     },
     handleScroll () {
-      // var _lastScrollPosition = this.lastScrollPosition
-      // var _newScrollPosition = this.newScrollPosition
-      // _lastScrollPosition = window.scrollY
-      // this.$refs.header_child.handleScroll(_newScrollPosition, _lastScrollPosition)
-      // this.$refs.copy_right.handleCdTop(_lastScrollPosition)
-      // // this.$refs.left_side.fixedPosition(_newScrollPosition, _lastScrollPosition)
-      // this.newScrollPosition = _lastScrollPosition
+      var _lastScrollPosition = this.lastScrollPosition
+      var _newScrollPosition = this.newScrollPosition
+      _lastScrollPosition = window.scrollY
+      this.$refs.header_child.handleScroll(_newScrollPosition, _lastScrollPosition)
+      this.$refs.copy_right.handleCdTop(_lastScrollPosition)
+      // this.$refs.left_side.fixedPosition(_newScrollPosition, _lastScrollPosition)
+      this.newScrollPosition = _lastScrollPosition
     },
     changeMenus (data) {
       this.currentTabComponent = this.mainComponentArray[data]

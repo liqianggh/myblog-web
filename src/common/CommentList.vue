@@ -136,7 +136,6 @@ export default {
       axios.put('http://localhost:8088/comments/like/' + item.id).then(result => {
       // axios.put('/api/comments/like/' + item.id).then(result => {
         if (result.data.status === 1000) {
-          alert('点赞成功!')
           item.likeCount = item.likeCount + 1
         }
       })
