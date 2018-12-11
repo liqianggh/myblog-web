@@ -114,7 +114,7 @@ export default {
   },
   methods: {
     getCommentsList (targetId, pageNum, pageSize, sessionId) {
-      var url = 'http://localhost:8088/comments/'
+      var url = 'http://123.206.88.191:8088/comments/'
       url += targetId
       console.log(targetId + ' ' + url)
       axios.get(url, {
@@ -133,7 +133,7 @@ export default {
       })
     },
     vote (item) {
-      axios.put('http://localhost:8088/comments/like/' + item.id).then(result => {
+      axios.put('http://123.206.88.191:8088/comments/like/' + item.id).then(result => {
       // axios.put('/api/comments/like/' + item.id).then(result => {
         if (result.data.status === 1000) {
           item.likeCount = item.likeCount + 1

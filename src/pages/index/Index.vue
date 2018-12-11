@@ -4,9 +4,9 @@
       <header-menus @changeMenus="changeMenus" ref="header_child"></header-menus>
       <article>
         <left-side :sideInitDataParam="sideInitData"></left-side>
-        <article-list :blogResult="blogResult"></article-list>
+        <article-list :blogResult="blogResult" ></article-list>
       </article>
-      <copy-right ref="copy_right"></copy-right>
+      <copy-right :blogResult="blogResult" ref="copy_right"></copy-right>
     </div>
 </template>
 
@@ -31,7 +31,9 @@ export default {
       currentLeftComponent: 'LeftSide',
       newScrollPosition: 0,
       lastScrollPosition: 0,
-      blogResult: null,
+      blogResult: {
+        list: []
+      },
       sideInitData: {
         recommendList: [],
         categoryList: [],
@@ -42,7 +44,7 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
-    axios.get('http://localhost:8088/blogs/index').then(result => {
+    axios.get('http://123.206.88.191:8088/blogs/index').then(result => {
       this.blogResult = result.data.data.blogList
       this.sideInitData.categoryList = result.data.data.categoryList
       this.sideInitData.recommendList = result.data.data.recommendList

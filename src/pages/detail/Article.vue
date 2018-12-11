@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     initData (id) {
-      axios.get('http://localhost:8088/blogs/' + id).then(result => {
+      axios.get('http://123.206.88.191:8088/blogs/' + id).then(result => {
         if (result) {
           this.articleData = result.data.data
         }

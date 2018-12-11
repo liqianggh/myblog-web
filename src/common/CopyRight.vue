@@ -3,7 +3,7 @@
     <footer>
       <p>Design by <a href="http://www.yangqq.com" target="_blank">李强个人博客</a> <a href="/">蜀ICP备11002373号-1</a></p>
     </footer>
-    <a href="#" @click="slideToTop" ref="cd_top" class="cd-top">Top</a>
+    <a href="javascript:;" @click="slideToTop" ref="cd_top" class="cd-top">Top</a>
   </div>
 </template>
 
@@ -14,17 +14,21 @@ export default {
     return {
       offset: 300,
       offset_opacity: 1200,
-      scroll_top_duration: 700
+      scroll_top_duration: 8700
     }
   },
   mounted () {
   },
   methods: {
     slideToTop () {
-      document.getElementsByTagName('body')[0].animate({
-        scrollTop: 0
-      }, this.scroll_top_duration
-      )
+      var timer = null
+      timer = setInterval(() => {
+        document.body.scrollTop -= 500
+        document.documentElement.scrollTop -= 40
+        if (document.body.scrollTop || document.documentElement.scrollTop === 0) {
+          clearInterval(timer)
+        }
+      }, 20)
     },
     handleCdTop (scrollY) {
       var backTop = this.$refs.cd_top

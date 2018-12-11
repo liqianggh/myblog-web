@@ -1,18 +1,15 @@
+
 <template>
   <main class="r_box">
-    <router-link tag="li" :name="index" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogResult.list" :key="index">
-      <slot v-bind="item">
-        <i><router-link tag="a" :href="'/blog/detail/'+item.id"><img
-          src="../../static/images/1.jpg"></router-link></i>
-        <h3><a :href="'/blog/detail/'+item.id">{{item.title}}</a></h3>
+    <router-link :class="listClass" tag="li" :name="index" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogResult.list" :key="index">
+        <h3><a>{{item.title}}</a></h3>
         <p >{{item.summary}}</p>
-      </slot>
     </router-link>
     <paginate
       v-model="currentPage"
       active-class="curPage"
       disabled-class="disabledEle"
-      :page-count="blogResult.pages"
+      :page-count="blogResult.pages||1"
       :page-range="5"
       :click-handler="goToPage"
       :prev-text="'Prev'"
@@ -46,7 +43,13 @@ export default {
   },
   data () {
     return {
-      currentPage: 1
+      currentPage: 1,
+      listClass: 'listIn'
+    }
+  },
+  watch: {
+    blogResult: function (newV, oldV) {
+      this.listClass = 'list'
     }
   },
   methods: {
@@ -64,5 +67,28 @@ export default {
 }
 </script>
 
-<style lang='stylus' scoped>
- </style>
+<style scoped>
+.list{
+  position: relative;
+  opacity: 0;
+  left:30px;
+  animation: .8s linear .3s slidein;
+  animation-fill-mode: forwards;
+}
+.list:hover{
+  background: #4AF2A1;
+  color:#EEF5FF;
+  left:40px;
+  top:-4px;
+  transition: .3s;
+}
+
+@keyframes slidein {
+  from { transform: scaleX(0);opacity: 0 }
+  to   { transform: scaleX(1);opacity: 1 }
+}
+@keyframes leftIn {
+  from {left:700px;opacity: 0}
+  to {left:30px;opacity: 1}
+}
+</style>

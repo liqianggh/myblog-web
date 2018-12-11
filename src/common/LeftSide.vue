@@ -7,17 +7,6 @@
         <p><b>李强</b>，一个不羁的码农。</p>
       </ul>
     </div>
-    <!--<div class="wdxc">-->
-      <!--<h2>我的相册</h2>-->
-      <!--<ul>-->
-        <!--<li><a href="/"><img src="../../static/images/7.jpg"></a></li>-->
-        <!--<li><a href="/"><img src="../../static/images/8.jpg"></a></li>-->
-        <!--<li><a href="/"><img src="../../static/images/9.jpg"></a></li>-->
-        <!--<li><a href="/"><img src="../../static/images/10.jpg"></a></li>-->
-        <!--<li><a href="/"><img src="../../static/images/11.jpg"></a></li>-->
-        <!--<li><a href="/"><img src="../../static/images/12.jpg"></a></li>-->
-      <!--</ul>-->
-    <!--</div>-->
     <div ref="fix_postion">
       <div class="search">
         <form action="/e/search/index.php" method="post" name="searchform" id="searchform">

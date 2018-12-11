@@ -2,10 +2,10 @@
   <header class="header-navigation" v-run="register('header')" id="header">
     <nav>
       <div class="logo"><a href="/">李强个人博客</a></div>
-      <h2 ref="mnavh" v-bind:class="{'open':!isShowNav}" @click="handleClick" id="mnavh"><span class="navicon"></span>
-      </h2>
+<!--       <h2 ref="mnavh" v-bind:class="{'open':!isShowNav}" @click="handleClick" id="mnavh"><span class="navicon"></span>
+      </h2> -->
       <ul ref="startlist" id="starlist">
-        <router-link tag="li" :to="item.url" v-for="(item, index) in navs" :itemIndex="index" :key="index" :id="item.isSelected==true?'selected':''">
+        <router-link tag="li" :to="item.url" v-for="(item, index) in navs" :itemIndex="index" :key="index" >
           {{item.content}}
         </router-link>
       </ul>
@@ -15,12 +15,6 @@
 <script>
 export default {
   name: 'HeaderMenus',
-  props: {
-    selectedId: {
-      type: Number,
-      defaultValue: 0
-    }
-  },
   data () {
     return {
       newScrollPosition: 0,
@@ -40,11 +34,6 @@ export default {
           content: '文章',
           isSelected: false
         },
-        // {
-        //   url: '/albums',
-        //   content: '相册',
-        //   isSelected: false
-        // },
         {
           url: '/comments/0',
           content: '留言',
@@ -64,9 +53,6 @@ export default {
         binding.value(el)
       }
     }
-  },
-  mounted () {
-    this.navs[this.selectedId].isSelected = true
   },
   unmounted () {
     this.destroyed()
@@ -97,20 +83,26 @@ export default {
       } else {
         _startlist.style.display = 'none'
       }
-    },
-    changeMenus (index) {
-      this.$emit('changeMenus', index)
-      if (this.curPosition) {
-        this.navs[this.curPosition].isSelected = false
-      } else {
-        this.navs[0].isSelected = false
-      }
-      this.curPosition = index
-      this.navs[index].isSelected = true
     }
   }
 }
 </script>
 
-<style lang='stylus' scoped>
+<style scoped>
+#starlist li{
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  border-radius: 1px
+}
+#starlist li:hover{
+  background: #4AF2A1;
+  color:#ADFFD5;
+  transition: .3s
+}
+.router-link-active{
+  background: #4AF2A1;
+  color: #ADFFD5
+}
 </style>
