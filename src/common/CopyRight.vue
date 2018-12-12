@@ -10,42 +10,52 @@
 <script>
 export default {
   name: 'CopyRight',
-  data () {
-    return {
-      offset: 300,
-      offset_opacity: 1200,
-      scroll_top_duration: 8700
-    }
-  },
   mounted () {
+    window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
   },
   methods: {
     slideToTop () {
+      if (this.$refs.cd_top.style.opacity === '0') {
+        return false
+      }
       var timer = null
       timer = setInterval(() => {
-        document.body.scrollTop -= 500
+        document.body.scrollTop -= 40
         document.documentElement.scrollTop -= 40
         if (document.body.scrollTop || document.documentElement.scrollTop === 0) {
           clearInterval(timer)
         }
       }, 20)
     },
-    handleCdTop (scrollY) {
-      var backTop = this.$refs.cd_top
-      if (scrollY > this.offset) {
-        backTop.classList.add('cd-is-visible')
+    handleScroll () {
+      if (document.documentElement.scrollTop > 70) {
+        this.$refs.cd_top.style.opacity = '0.5'
+        this.$refs.cd_top.style.cursor = 'pointer'
       } else {
-        backTop.classList.remove('cd-is-visible')
-        backTop.classList.remove('cd-fade-out')
+        this.$refs.cd_top.style.opacity = '0'
+        this.$refs.cd_top.style.cursor = 'default'
       }
-      if (scrollY > this.offset_opacity) {
-        backTop.classList.add('cd-fade-out')
+    },
+    throttle (func, delay) {
+      let timer = null
+      let startTime = Date.now()
+      return function () {
+        let curTime = Date.now()
+        let remaining = delay - (curTime - startTime)
+        const context = this
+        const args = arguments
+        clearTimeout(timer)
+        if (remaining <= 0) {
+          func.apply(context, args)
+          startTime = Date.now()
+        } else {
+          timer = setTimeout(func, remaining)
+        }
       }
     }
   }
 }
 </script>
-
-<style lang='stylus' scoped>
-
-</style>

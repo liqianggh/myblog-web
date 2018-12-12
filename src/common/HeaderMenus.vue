@@ -1,9 +1,7 @@
 <template>
-  <header class="header-navigation" v-run="register('header')" id="header">
+  <header class="header-navigation"  ref="header" id="header">
     <nav>
       <div class="logo"><a href="/">李强个人博客</a></div>
-<!--       <h2 ref="mnavh" v-bind:class="{'open':!isShowNav}" @click="handleClick" id="mnavh"><span class="navicon"></span>
-      </h2> -->
       <ul ref="startlist" id="starlist">
         <router-link tag="li" :to="item.url" v-for="(item, index) in navs" :itemIndex="index" :key="index" >
           {{item.content}}
@@ -15,14 +13,15 @@
 <script>
 export default {
   name: 'HeaderMenus',
+  mounted () {
+    window.addEventListener('scroll', this.throttle(this.handleScroll, 200))
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.throttle(this.handleScroll, 200))
+  },
   data () {
     return {
-      newScrollPosition: 0,
-      lastScrollPosition: 0,
-      header: document.getElementById('header'),
-      elements: {},
-      isShowNav: true,
-      curPosition: this.selectedId,
+      switchHandle: false,
       navs: [
         {
           url: '/index',
@@ -47,41 +46,35 @@ export default {
       ]
     }
   },
-  directives: {
-    run (el, binding) {
-      if ((typeof binding.value) === 'function') {
-        binding.value(el)
-      }
-    }
-  },
-  unmounted () {
-    this.destroyed()
-  },
   methods: {
-    handleScroll (_newScrollPosition, _lastScrollPosition) {
-      var _header = this.elements.header
-      // Scrolling down
-      if (_newScrollPosition < _lastScrollPosition && _lastScrollPosition > 80) {
-        _header.classList.remove('slideDown')
-        _header.classList.add('slideUp')
-        // Scrolling up
-      } else if (_newScrollPosition > _lastScrollPosition) {
-        _header.classList.remove('slideUp')
-        _header.classList.add('slideDown')
-      }
-    },
-    register (flag) {
-      return (el) => {
-        this.elements[flag] = el
-      }
-    },
-    handleClick () {
-      this.isShowNav = !this.isShowNav
-      var _startlist = this.$refs.startlist
-      if ((!_startlist.style.display) || _startlist.style.display === 'none') {
-        _startlist.style.display = 'block'
+    handleScroll () {
+      if (document.documentElement.scrollTop > 70) {
+        if (!this.switchHandle) {
+          this.switchHandle = true
+          this.$refs.header.style.top = '-60px'
+        }
       } else {
-        _startlist.style.display = 'none'
+        if (this.switchHandle) {
+          this.switchHandle = false
+          this.$refs.header.style.top = '0px'
+        }
+      }
+    },
+    throttle (func, delay) {
+      let timer = null
+      let startTime = Date.now()
+      return function () {
+        let curTime = Date.now()
+        let remaining = delay - (curTime - startTime)
+        const context = this
+        const args = arguments
+        clearTimeout(timer)
+        if (remaining <= 0) {
+          func.apply(context, args)
+          startTime = Date.now()
+        } else {
+          timer = setTimeout(func, remaining)
+        }
       }
     }
   }

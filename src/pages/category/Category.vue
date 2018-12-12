@@ -1,13 +1,10 @@
 <template>
   <!--网页头部导航栏-->
   <div>
-    <header-menus @changeMenus="changeMenus" ref="header_child"></header-menus>
     <article>
         <left-side></left-side>
-        <!--<component :blogResult="blogResult" ref="main_component" v-bind:is="currentTabComponent"></component>-->
        <article-list :categoryId="category" :blogResult="blogResult"></article-list>
     </article>
-    <copy-right  :blogResult="blogResult" ref="copy_right"></copy-right>
   </div>
 </template>
 
@@ -29,7 +26,7 @@ export default {
   },
   data () {
     return {
-      blogResult: [],
+      blogResult: {},
       category: null
     }
   },
@@ -63,7 +60,6 @@ export default {
       axios.get(url).then(result => {
         this.blogResult = result.data.data
         this.category = id
-        console.log(this.blogResult)
       })
     }
   }

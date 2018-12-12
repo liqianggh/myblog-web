@@ -2,37 +2,15 @@
   <div class="gbook">
     <h2>留言板</h2>
     <div class="gbko">
-      <!--<script src="/e/pl/more/?classid=77&amp;id=106&amp;num=20"></script>-->
-      <!--<div class="fb">-->
-        <!--<ul>-->
-          <!--<p class="fbtime"><span>2018-07-24 11:52:38</span>秋刀鱼</p>-->
-          <!--<p class="fbinfo">这才是我要的朋友圈</p>-->
-          <!--<div class="fblike"><i>点赞</i> (23)</div>-->
-        <!--</ul>-->
-      <!--</div>-->
-      <!--<div class="hf">-->
-        <!--<ul>-->
-          <!--<p class="zzhf"><font color="#FF0000">站长回复:</font>嗯，我也是自制力有限，删除头条就是矫枉过正而已，这个因人而异，不强求他人，也不想标题党。</p>-->
-        <!--</ul>-->
-      <!--</div>-->
       <div >
         <div v-for="(item, index) in commentsPageInfo.list" :key="item.email + index" class="fb">
           <ul>
             <p class="fbtime"><span>{{item.createTime}}</span>{{item.userName}}</p>
             <p class="fbinfo">{{item.content}}</p>
-            <a href="#"><div class="fblike" @click="vote(item)"><i>点赞</i> ({{item.likeCount}})</div></a>
+            <a href="#"><div class="fblike" @click="vote(item)"><strong class="like">点赞 ({{item.likeCount}})</strong></div></a>
           </ul>
         </div>
       </div>
-      <!--<div class="fb">-->
-        <!--<ul>-->
-          <!--<p class="fbtime"><span>2018-07-24 08:52:48</span> 卜野</p>-->
-          <!--<p class="fbinfo"></p>-->
-          <!--<div class="ecomment"><span class="ecommentauthor">网友 家蚂蚁 的原文：</span>-->
-            <!--<p class="ecommenttext">坚持哟!看你每天都有写，请继续加油，再接再厉哦</p>-->
-          <!--</div>-->
-        <!--</ul>-->
-      <!--</div>-->
       <form v-on:submit.prevent="addComment" method="post" name="saypl" id="saypl" >
         <div id="plpost">
           <p class="saying">
@@ -41,20 +19,15 @@
           </span>来说两句吧...</p>
 
           <p class="yname"><span>您的邮箱:</span>
-            <input v-model="comment.email" name="username" type="text" class="inputText" placeholder="必填" id="username" value="" size="16"><pan ref="emailInput" class="error-message">邮箱不能为空</pan>
+            <input v-model="comment.email" name="username" type="text" class="inputText" placeholder="必填" id="username" value="" size="16"><span ref="emailInput" class="error-message">邮箱不能为空</span>
           </p>
           <p class="yzm"><span>您的名字:</span>
-            <input v-model="comment.username" name="key" placeholder="首次评论需要输入..." type="text" class="inputText" size="16"><pan ref="usernameInput" class="error-message">请输入昵称(1-12位)</pan>
+            <input v-model="comment.username" name="key" placeholder="首次评论需要输入..." type="text" class="inputText" size="16"><span ref="usernameInput" class="error-message">请输入昵称(1-12位)</span>
           </p>
           <input name="nomember" type="hidden" id="nomember" value="1" checked="checked">
           <div>留言内容</div>
-          <textarea v-model="comment.content" placeholder="来了就说两句吧..." name="saytext" rows="6" id="saytext"></textarea><pan ref="contentInput" class="error-message">内容不能为空(1-500位)</pan>
+          <textarea v-model="comment.content" placeholder="来了就说两句吧..." name="saytext" rows="6" id="saytext"></textarea><span ref="contentInput" class="error-message">内容不能为空(1-500位)</span>
           <input name="imageField" type="submit" value="提交">
-          <!--<input name="id" type="hidden" id="id" value="106">-->
-          <!--<input name="classid" type="hidden" id="classid" value="77">-->
-          <!--<input name="enews" type="hidden" id="enews" value="AddPl">-->
-          <!--<input name="repid" type="hidden" id="repid" value="0">-->
-          <!--<input type="hidden" name="ecmsfrom" value="/joke/talk/2018-07-23/106.html">-->
         </div>
       </form>
     </div>
@@ -163,10 +136,16 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
+  .like
+    color #FF464D
+  .like:hover
+    color #FF2D8C
   .error-message
     display none
     color red
     padding-left 5px
   .show
     display inline-block
+  .gbook
+    padding:10px
 </style>

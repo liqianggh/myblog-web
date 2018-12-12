@@ -7,7 +7,7 @@
         <p><b>李强</b>，一个不羁的码农。</p>
       </ul>
     </div>
-    <div ref="fix_postion">
+    <div ref="fix_position" class="fixedSide" id="fixedSide">
       <div class="search">
         <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
           <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
@@ -50,12 +50,6 @@
         </ul>
       </div>
     </div>
-    <!--<div class="guanzhu">-->
-      <!--<h2>关注我 么么哒</h2>-->
-      <!--<ul>-->
-        <!--<img src="../../static/images/wx.jpg">-->
-      <!--</ul>-->
-    <!--</div>-->
   </aside>
 </template>
 <script>
@@ -80,11 +74,12 @@ export default {
   },
   mounted () {
     this.dataInit()
+    window.addEventListener('scroll', this.throttle(this.handleScroll, 50))
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.throttle(this.handleScroll, 50))
   },
   methods: {
-    fixedPosition (_newScrollPosition, _lastScrollPosition) {
-      console.log(_newScrollPosition + '  ' + _lastScrollPosition)
-    },
     dataInit () {
       if (this.sideInitDataParam) {
         this.sideInitData = this.sideInitDataParam
@@ -92,7 +87,6 @@ export default {
         return
       }
       var sideData = localStorage.getItem('sideInitData')
-      console.log(sideData.recommendList + '123')
       if (sideData != null && (sideData.recommendList != null || sideData.categoryList)) {
         this.sideInitData = sideData
       } else {
@@ -101,13 +95,40 @@ export default {
           this.sideInitData.recommendList = result.data.data.recommendList
           this.sideInitData.tagList = result.data.data.tagList
           this.sideInitData.clickRankList = result.data.data.clickRankList
-          console.log(result.data.data)
         })
+      }
+    },
+    handleScroll () {
+      if (document.documentElement.scrollTop > 230) {
+        document.getElementById('fixedSide').style.position = 'fixed'
+      } else {
+        document.getElementById('fixedSide').style.position = ''
+      }
+    },
+    throttle (func, delay) {
+      let timer = null
+      let startTime = Date.now()
+      return function () {
+        let curTime = Date.now()
+        let remaining = delay - (curTime - startTime)
+        const context = this
+        const args = arguments
+        clearTimeout(timer)
+        if (remaining <= 0) {
+          func.apply(context, args)
+          startTime = Date.now()
+        } else {
+          timer = setTimeout(func, remaining)
+        }
       }
     }
   }
 }
 </script>
 
-<style lang='stylus' scoped>
+<style scoped>
+.fixedSide{
+  width: 300px;
+  bottom: -50px;
+}
 </style>
