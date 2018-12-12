@@ -2,6 +2,9 @@
   <header class="header-navigation"  ref="header" id="header">
     <nav>
       <div class="logo"><a href="/">李强个人博客</a></div>
+      <!--移动端时显示菜单按钮-->
+      <h2 ref="mnavh" v-bind:class="{'open':!isShowNav}" @click="handleClick" id="mnavh"><span class="navicon"></span>
+      </h2>
       <ul ref="startlist" id="starlist">
         <router-link tag="li" :to="item.url" v-for="(item, index) in navs" :itemIndex="index" :key="index" >
           {{item.content}}
@@ -22,6 +25,7 @@ export default {
   data () {
     return {
       switchHandle: false,
+      isShowNav: true,
       navs: [
         {
           url: '/index',
@@ -60,6 +64,15 @@ export default {
         }
       }
     },
+    handleClick () {
+      this.isShowNav = !this.isShowNav
+      var _startlist = this.$refs.startlist
+      if ((!_startlist.style.display) || _startlist.style.display === 'none') {
+        _startlist.style.display = 'block'
+      } else {
+        _startlist.style.display = 'none'
+      }
+    },
     throttle (func, delay) {
       let timer = null
       let startTime = Date.now()
@@ -90,12 +103,15 @@ export default {
   border-radius: 1px
 }
 #starlist li:hover{
-  background: #4AF2A1;
-  color:#ADFFD5;
-  transition: .3s
+  /*background: #4AF2A1;*/
+  /*color:#ADFFD5;*/
+  transition: .3s;
+  background-color: rgba(0,0,0,0.1);
+  font-weight: bolder;
 }
 .router-link-active{
-  background: #4AF2A1;
-  color: #ADFFD5
+  /*background: #4AF2A1;*/
+  /*color: #ADFFD5*/
+  color: #f56c6c;
 }
 </style>

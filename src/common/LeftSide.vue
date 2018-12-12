@@ -74,10 +74,10 @@ export default {
   },
   mounted () {
     this.dataInit()
-    window.addEventListener('scroll', this.throttle(this.handleScroll, 50))
+    // window.addEventListener('scroll', this.throttle(this.handleScroll, 50))
   },
   destroyed () {
-    window.removeEventListener('scroll', this.throttle(this.handleScroll, 50))
+    // window.removeEventListener('scroll', this.throttle(this.handleScroll, 50))
   },
   methods: {
     dataInit () {

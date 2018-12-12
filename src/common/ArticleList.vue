@@ -73,28 +73,30 @@ export default {
 .list{
   position: relative;
   opacity: 0;
-  left:30px;
+  /*left:30px;*/
   animation: .5s linear .3s slidetop;
   animation-fill-mode: forwards;
 }
 .list:hover{
-  background: #4AF2A1;
+  /*background: #4AF2A1;*/
+  font-weight: bolder;
   color:#EEF5FF;
-  left:40px;
+  left:5px;
   top:-4px;
   transition: .3s;
 }
 .list1{
   position: relative;
   opacity: 0;
-  left:30px;
+  /*left:30px;*/
   animation: .5s linear .3s slidetopa;
   animation-fill-mode: forwards;
 }
 .list1:hover{
-  background: #4AF2A1;
+  /*background: #4AF2A1;*/
+  font-weight: bolder;
   color:#EEF5FF;
-  left:40px;
+  left:5px;
   top:-4px;
   transition: .3s;
 }
