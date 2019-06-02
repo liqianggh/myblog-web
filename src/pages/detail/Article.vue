@@ -26,12 +26,13 @@ export default {
   },
   data () {
     return {
-      articleData: null
+      articleData: null,
+      id: 0
     }
   },
   mounted () {
     let idParam = this.$route.params.id
-    this.id = idParam
+    this.id = Number.parseInt(idParam)
     this.initData(this.id)
     // this.articleData = this.id
   },
@@ -43,7 +44,7 @@ export default {
   },
   methods: {
     initData (id) {
-      axios.get('http://123.206.88.191:8088/blogs/' + id).then(result => {
+      axios.get('api/blogs/' + id).then(result => {
         if (result) {
           this.articleData = result.data.data
         }

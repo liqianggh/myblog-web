@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://123.206.88.191:8088/blogs/index').then(result => {
+    axios.get('api/blogs/index').then(result => {
       this.blogResult = result.data.data.blogList
       this.sideInitData.categoryList = result.data.data.categoryList
       this.sideInitData.recommendList = result.data.data.recommendList

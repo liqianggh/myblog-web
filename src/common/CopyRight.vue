@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <p>Design by <a href="http://www.yangqq.com" target="_blank">李强个人博客</a> <a href="/">蜀ICP备11002373号-1</a></p>
+      <p><a href="http://www.mycookies.cn" target="_blank">李强个人博客</a> <a href="/">皖ICP备17014740号-1</a></p>
     </footer>
     <a href="javascript:;" @click="slideToTop" ref="cd_top" class="cd-top">Top</a>
   </div>

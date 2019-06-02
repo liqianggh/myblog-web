@@ -3,8 +3,8 @@
     <div class="about_me">
       <h2>关于我</h2>
       <ul>
-        <i><img src="../../static/images/4.jpg"></i>
-        <p><b>李强</b>，一个不羁的码农。</p>
+        <i><img src="../../static/images/123.jpg"></i>
+        <p>一个不羁的码农</p>
       </ul>
     </div>
     <div ref="fix_position" class="fixedSide" id="fixedSide">
@@ -29,12 +29,12 @@
           <router-link tag="a" v-for="(item,index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tagName}}</router-link>
         </ul>
       </div>
-      <div class="tuijian">
-        <h2>站长推荐</h2>
-        <ul>
-          <li v-for="(item, index) in sideInitData.recommendList" :key="index"><router-link tag ='a' :to="'/blog/detail/'+item.id">{{item.title}}</router-link></li>
-        </ul>
-      </div>
+      <!--<div class="tuijian">-->
+        <!--<h2>站长推荐</h2>-->
+        <!--<ul>-->
+          <!--<li v-for="(item, index) in sideInitData.recommendList" :key="index"><router-link tag ='a' :to="'/blog/detail/'+item.id">{{item.title}}</router-link></li>-->
+        <!--</ul>-->
+      <!--</div>-->
       <div class="tuijian">
         <h2>点击排行</h2>
         <ul>

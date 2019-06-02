@@ -48,7 +48,7 @@ export default {
         alert('参数错误!')
         return
       }
-      var url = 'http://123.206.88.191:8088/blogs'
+      var url = 'api/blogs'
       if (type) {
         url += ('?tagId=' + id)
         url += '&type=2'
