@@ -36,10 +36,10 @@ export default {
     this.initData(this.id)
     // this.articleData = this.id
   },
-  updated () {
-    let idParam = this.$route.params.id
-    if (this.id !== idParam) {
-      this.initData(this.id)
+  watch: {
+    $route (to, from) {
+      let id = this.$route.params.id
+      this.initData(id)
     }
   },
   methods: {
