@@ -50,6 +50,7 @@
       },
       targetId: {
         type: Number,
+        defaultValue: 0
       },
       targetType: {
         type: String,
@@ -83,7 +84,6 @@
      },
     methods: {
       getCommentsList() {
-        alert(123)
         var url = 'api/comments/'
         url += this.targetId
         axios.get(url, {
@@ -104,7 +104,7 @@
       vote(item) {
         axios.put('/api/comments/like/' + item.id).then(result => {
           if (result.data.status === 1000) {
-            item.likeCount = item.likeCount + 1
+            item.like_count = item.like_count + 1
           }
         })
       },

@@ -50,10 +50,14 @@ export default {
   mounted () {
   },
   watch: {
+    // $route (to, from) {
+    //   let id = this.$route.params.id
+    //   this.initData(id)
+    // }
   },
   methods: {
     voteArticle (id) {
-      axios.put('http://localhost:8088/blogs/count/' + id + '?type=like').then(result => {
+      axios.put('/api/blogs/count/' + id + '?type=like').then(result => {
         if (result.data.status === 1000) {
           this.articleData.like_count = this.articleData.like_count + 1
         }
