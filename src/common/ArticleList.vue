@@ -60,9 +60,9 @@ export default {
     goToPage (pageNum) {
       axios.get('/api/blogs', {
         params: {
-          pageNum: pageNum,
-          pageSize: 7,
-          categoryId: this.categoryId
+          page_num: pageNum,
+          page_size: 7,
+          category_id: this.categoryId
         }
       }).then(result => {
         this.blogList = result.data.data

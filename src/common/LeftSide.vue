@@ -20,13 +20,13 @@
       <div class="fenlei">
         <h2>文章分类</h2>
         <ul>
-           <router-link tag="li" :to="'/blogs/category/'+ item.id" v-for="(item, index) in sideInitData.categoryList" :key="index"><a href="/">{{item.tagName}}（{{item.count}}）</a></router-link>
+           <router-link tag="li" :to="'/blogs/category/'+ item.id" v-for="(item, index) in sideInitData.categoryList" :key="index"><a href="/">{{item.tag_name}}（{{item.blog_count}}）</a></router-link>
         </ul>
       </div>
       <div class="cloud">
         <h2>标签云</h2>
         <ul>
-          <router-link tag="a" v-for="(item,index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tagName}}</router-link>
+          <router-link tag="a" v-for="(item,index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tage_name}}</router-link>
         </ul>
       </div>
       <!--<div class="tuijian">-->
@@ -91,10 +91,10 @@ export default {
         this.sideInitData = sideData
       } else {
         axios.get('/api/blogs/left').then(result => {
-          this.sideInitData.categoryList = result.data.data.categoryList
-          this.sideInitData.recommendList = result.data.data.recommendList
-          this.sideInitData.tagList = result.data.data.tagList
-          this.sideInitData.clickRankList = result.data.data.clickRankList
+          this.sideInitData.categoryList = result.data.data.category_list
+          this.sideInitData.recommendList = result.data.data.recommend_list
+          this.sideInitData.tagList = result.data.data.tag_list
+          this.sideInitData.clickRankList = result.data.data.click_rank_list
         })
       }
     },

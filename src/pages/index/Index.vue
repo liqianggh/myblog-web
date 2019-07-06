@@ -42,11 +42,15 @@ export default {
   },
   mounted () {
     axios.get('api/blogs/index').then(result => {
-      this.blogResult = result.data.data.blogList
-      this.sideInitData.categoryList = result.data.data.categoryList
-      this.sideInitData.recommendList = result.data.data.recommendList
-      this.sideInitData.tagList = result.data.data.tagList
-      this.sideInitData.clickRankList = result.data.data.clickRankList
+      if (result.data.status === 1000) {
+        this.blogResult = result.data.data.blog_list
+        this.sideInitData.categoryList = result.data.data.category_list
+        this.sideInitData.recommendList = result.data.data.recommend_list
+        this.sideInitData.tagList = result.data.data.tagList
+        this.sideInitData.clickRankList = result.data.data.click_rank_list
+      } else {
+        alert(result.data.msg)
+      }
     })
   }
 }

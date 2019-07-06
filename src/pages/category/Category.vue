@@ -38,7 +38,7 @@ export default {
   watch: {
     $route (to, from) {
       let id = this.$route.params.id
-      let type = this.$route.query.type
+      let type = this.$route.query.tag_type
       this.getArticleListByCategoryId(id, type)
     }
   },
@@ -50,11 +50,11 @@ export default {
       }
       var url = 'api/blogs'
       if (type) {
-        url += ('?tagId=' + id)
-        url += '&type=2'
+        url += ('?tag_id=' + id)
+        url += '&tag_type=2'
       } else {
         if (id !== '0') {
-          url += ('?categoryId=' + id)
+          url += ('?category_id=' + id)
         }
       }
       axios.get(url).then(result => {
