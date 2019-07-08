@@ -46,7 +46,7 @@ export default {
         this.blogResult = result.data.data.blog_list
         this.sideInitData.categoryList = result.data.data.category_list
         this.sideInitData.recommendList = result.data.data.recommend_list
-        this.sideInitData.tagList = result.data.data.tagList
+        this.sideInitData.tagList = result.data.data.tag_list
         this.sideInitData.clickRankList = result.data.data.click_rank_list
       } else {
         alert(result.data.msg)

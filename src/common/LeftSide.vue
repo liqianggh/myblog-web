@@ -26,7 +26,7 @@
       <div class="cloud">
         <h2>标签云</h2>
         <ul>
-          <router-link tag="a" v-for="(item,index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tage_name}}</router-link>
+          <router-link tag="a" v-for="(item, index) in sideInitData.tagList" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'">{{item.tag_name}}（{{item.blog_count}}）</router-link>
         </ul>
       </div>
       <!--<div class="tuijian">-->
@@ -59,7 +59,8 @@ export default {
   props: {
     sideInitDataParam: {
       recommendList: [],
-      categoryList: []
+      categoryList: [],
+      tagList: []
     }
   },
   data () {
