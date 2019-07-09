@@ -14,18 +14,10 @@ import 'styles/info.css'
 import 'styles/infopic.css'
 import 'styles/base.css'
 import 'styles/m.css'
-// import 'js/jquery.min.js'
-// import 'js/comm.js'
-// import 'js/page.js'
-// import 'js/scrollReveal.js'
-// import 'js/piccontent.min.js'
-// import 'js/page2.js'
-// import 'js/hc-sticky.js'
-// import 'js/modernizr.js'
 Vue.config.productionTip = false
 
 Vue.use(Element)
-/* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,

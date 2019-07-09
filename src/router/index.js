@@ -8,6 +8,10 @@ import Category from '@/pages/category/Category'
 import Tag from '@/pages/category/Tag'
 import Comments from '@/pages/comments/Comments'
 import AboutMe from '@/pages/about/About'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 Vue.use(Router)
 
 export default new Router({
