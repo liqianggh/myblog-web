@@ -14,7 +14,6 @@
         <!--<div class="news_about"><strong>简介</strong>个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</div>-->
         <div class="news_con markdown-body" v-html="articleData.html_content">
         </div>
-        <mavon-editor style="display: none" ref="md"  :ishljs = "true" />
       </div>
       <div class="share">
         <p class="diggit"><button class="dianzan diggit" v-on:click="voteArticle(articleData.id)"> 很赞哦！({{articleData.like_count}})</button></p>
