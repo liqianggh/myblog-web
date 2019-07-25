@@ -2,8 +2,7 @@
 <template>
   <main class="r_box">
     <router-link :class="listClass" tag="li" :name="index" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogList.list" :key="index">
-      <!--<i><a href="/"><img-->
-        <!--src="../../static/images/123.jpg"></a></i>-->
+      <i v-if="item.img_url"><a href="/"><img :src="item.img_url"></a></i>
         <h3><a>{{item.title}}</a></h3>
         <p >{{item.summary}}</p>
     </router-link>
