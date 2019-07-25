@@ -31,7 +31,9 @@ import axios from 'Axios'
 export default {
   name: 'ArticleInfo',
   props: {
-    articleData: {},
+    articleData: {
+      type: Object
+    },
     id: {
       type: Number
     }
@@ -40,7 +42,8 @@ export default {
     return {
       pageNum: 1,
       pageSize: 100,
-      target_type: 'ARTICLE'
+      target_type: 'ARTICLE',
+      blogDetail:{}
     }
   },
   components: {
@@ -48,12 +51,11 @@ export default {
   },
   mounted () {
   },
-  watch: {
-    // $route (to, from) {
-    //   let id = this.$route.params.id
-    //   this.initData(id)
-    // }
-  },
+  // watch: {
+  //   articleData(){
+  //     this.blogDetail = this.articleData;
+  //   }
+  // },
   methods: {
     voteArticle (id) {
       axios.put('/api/blogs/count/' + id + '?type=like').then(result => {

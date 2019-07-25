@@ -45,12 +45,13 @@ export default {
     this.id = Number.parseInt(idParam)
     this.initData(this.id)
   },
-  // watch: {
-  //   $route (to, from) {
-  //     let id = this.$route.params.id
-  //     this.initData(id)
-  //   }
-  // },
+  watch: {
+    $route (to, from){
+      let id = this.$route.params.id
+      this.id = id;
+      this.initData(id)
+    }
+  },
   methods: {
     initData (id) {
       axios.get('api/blogs/' + id).then(result => {
