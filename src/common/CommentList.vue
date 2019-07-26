@@ -3,15 +3,23 @@
     <h2>留言板</h2>
     <div class="gbko">
       <div>
-        <div v-for="(item, index) in commentsPageInfoData.list" :key="item.user_email + index" class="fb">
-          <ul>
-            <p class="fbtime"><span>{{item.create_time}}</span>{{item.user_name}}</p>
-            <p class="fbinfo">{{item.content}}</p>
-            <a href="#">
-              <div class="fblike" @click="vote(item)"><strong class="like">点赞 ({{item.like_count}})</strong></div>
-            </a>
-          </ul>
+        <div  v-for="(item, index) in commentsPageInfoData.list" :key="item.user_email + index" >
+          <div class="fb">
+            <ul>
+              <p class="fbtime"><span>{{item.create_time}}</span>{{item.user_name}}</p>
+              <p class="fbinfo">{{item.content}}</p>
+              <a href="#">
+                <div class="fblike" @click="vote(item)"><strong class="like">点赞 ({{item.like_count}})</strong></div>
+              </a>
+            </ul>
+          </div>
+          <div class="hf" v-if="item.children_comments !=null && item.children_comments.length > 0">
+            <ul v-for=" child_comment in item.children_comments">
+              <p class="zzhf"><font color="#FF0000">{{child_comment.user_name}}:</font>{{child_comment.content}}</p>
+            </ul>
+          </div>
         </div>
+        <a href="#"><div style="text-align: center"  v-if="commentsPageInfoData.has_next_page"  @click="goToPage()">查看更多</div></a>
       </div>
       <form v-on:submit.prevent="addComment" method="post" name="saypl" id="saypl">
         <div id="plpost">
@@ -41,6 +49,7 @@
 
 <script>
   import axios from 'Axios'
+  import * as arrayObject from "friendly-errors-webpack-plugin/src/utils";
 
   export default {
     name: 'CommentInput',
@@ -72,7 +81,7 @@
       }
     },
     mounted() {
-      if (this.commentsPageInfoData === null) {
+      if (JSON.stringify(this.commentsPageInfoData)) {
         let id = this.$route.params.id
         this.target_type = this.targetType
         this.target_id = this.targetId
@@ -88,7 +97,7 @@
         url += this.targetId
         axios.get(url, {
           params: {
-            page_num: this.page_num,
+            pageNum: this.page_num,
             page_size: this.page_size,
             targetType: this.targetType
           }
@@ -98,6 +107,8 @@
           if (pageInfo) {
             this.commentsPageInfoData.list = pageInfo.list
             this.commentsPageInfoData.total = pageInfo.total
+            this.commentsPageInfoData.page_nux = pageInfo.page_num
+            this.commentsPageInfoData.has_next_page = pageInfo.has_next_page
           }
         })
       },
@@ -128,6 +139,27 @@
             this.getCommentsList()
           } else if (result.data.status) {
             console.log(result)
+          }
+        })
+      },
+      goToPage () {
+        var url = 'api/comments/'
+        url += this.targetId
+        axios.get(url, {
+          params: {
+            pageNum: this.page_num+1,
+            page_size: this.page_size,
+            targetType: this.targetType
+          }
+        }).then(result => {
+          var pageInfo = result.data.data
+          if (pageInfo) {
+            if (pageInfo.list && pageInfo.list.length > 0) {
+              this.commentsPageInfoData.list = arrayObject.concat(this.commentsPageInfoData.list, pageInfo.list)
+              this.commentsPageInfoData.total = pageInfo.total
+              this.commentsPageInfoData.has_next_page = pageInfo.has_next_page
+              this.page_num = pageInfo.page_num + 1
+            }
           }
         })
       }
