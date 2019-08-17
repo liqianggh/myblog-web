@@ -18,7 +18,8 @@ import 'styles/m.css'
 import 'styles/github-markdown.min.css'
 // Vue-cli生成的工程文件的src/main.js
 import hljs from 'highlight.js'
-import 'highlight.js/styles/shades-of-purple.css' //样式文件
+// import 'highlight.js/styles/shades-of-purple.css' //样式文件atom-one-light
+import 'highlight.js/styles/github-gist.css'
 Vue.directive('highlight',function (el) {
   let blocks = el.querySelectorAll('pre code');
   blocks.forEach((block)=>{

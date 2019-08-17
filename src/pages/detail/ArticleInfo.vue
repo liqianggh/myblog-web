@@ -7,11 +7,13 @@
             <li class="author">作者：<a href="#">Jann</a></li>
             <li class="lmname"><a href="/">{{articleData.category_name}}</a></li>
             <li class="timer">时间：{{articleData.create_time}} ({{articleData.calc_time}})</li>
-            <li class="view">{{articleData.view_count}}人已阅读</li>
+            <li class="view">{{articleData.view_count}}人阅读</li>
           </ul>
         </div>
-        <div class="tags"><a v-for="(item, index) in articleData.tagList" :key="index" href="/" target="_blank">{{item.tag_name}}</a></div>
-        <!--<div class="news_about"><strong>简介</strong>个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</div>-->
+        <div class="tags">
+          <router-link tag="a"  v-for="(item, index) in articleData.tag_list" :key="index" :to="'/blogs/category/'+ item.id +'?type=2'" target="_self">{{item.tag_name}}</router-link>
+        </div>
+        <div class="news_about" v-html="articleData.summary"></div>
         <div class="news_con markdown-body" v-html="articleData.html_content">
         </div>
       </div>
@@ -51,11 +53,6 @@ export default {
   },
   mounted () {
   },
-  // watch: {
-  //   articleData(){
-  //     this.blogDetail = this.articleData;
-  //   }
-  // },
   methods: {
     voteArticle (id) {
       axios.put('/api/blogs/count/' + id + '?type=like').then(result => {
@@ -75,5 +72,13 @@ export default {
     cursor pointer
     width 160px
     height 40px
+  }
+  .markdown-body {color : #555}
+  .news_title {
+    font-size: 26px;
+    font-weight: normal;
+    padding: 18px 0;
+    color: #333;
+    text-align: center;
   }
 </style>

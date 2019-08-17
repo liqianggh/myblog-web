@@ -4,7 +4,7 @@
       <h2>关于我</h2>
       <ul>
         <i><img src="../../static/images/123.jpg"></i>
-        <p>一个不羁的码农</p>
+        <p><strongr> 一个95后程序员</strongr></p>
       </ul>
     </div>
     <div ref="fix_position" class="fixedSide" id="fixedSide">

@@ -6,7 +6,7 @@
 .intitle { line-height: 40px; height: 40px; font-size: 14px; ; border-bottom: #000 2px solid; }
 .intitle a { font-weight: normal; }
 .news_title { font-size: 24px; font-weight: normal; padding: 20px 0; color: #333; }
-.bloginfo { width: 100%; overflow: hidden }
+.bloginfo { width: 100%;overflow: hidden;  padding-bottom: 1px;  border-bottom: 1.2px solid #eee;  text-align: center; }
 .bloginfo li { float: left; margin-right: 20px }
 .news_about { color: #888888; border: 1px solid #F3F3F3; padding: 10px; margin: 20px auto 15px auto; line-height: 23px; background: none repeat 0 0 #F6F6F6; }
 .news_about strong { color: #38485A; font-weight: 400 !important; font-size: 13px; padding-right: 8px; }

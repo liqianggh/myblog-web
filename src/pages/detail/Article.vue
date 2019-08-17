@@ -82,4 +82,13 @@ export default {
 }
 </script>
 <style lang='stylus'>
+  .news_con markdown-body pre, .markdown-body pre {
+    padding: 0px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    border: dashed 0.5px #9e9e9e;
+  }
 </style>

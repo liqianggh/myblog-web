@@ -1,11 +1,12 @@
 
 <template>
   <main class="r_box">
-    <router-link :class="listClass" tag="li" :name="index" :to="'/blog/detail/'+item.id" v-for="(item, index) in blogList.list" :key="index">
-      <i v-if="item.img_url"><a href="/"><img :src="item.img_url"></a></i>
-        <h3><a>{{item.title}}</a></h3>
-        <p >{{item.summary}}</p>
-    </router-link>
+    <li class="listClass"  v-for="(item, index) in blogList.list" :key="index">
+        <i v-if="item.img_url"><router-link tag="a" :to="'/blog/detail/'+item.id"><img :src="item.img_url"></router-link></i>
+      <!--[ 顶 ]-->
+        <h3> <router-link tag="a" :to="'/blog/detail/'+item.id">{{item.title}}   </router-link></h3>
+        <p>{{item.summary}}</p>
+    </li>
     <paginate
       v-model="currentPage"
       active-class="curPage"
@@ -101,6 +102,15 @@ export default {
   left:5px;
   top:-4px;
   transition: .3s;
+}
+.r_box li h3 {
+  font-size: 16px;
+  line-height: 25px;
+  text-shadow: #FFF 1px 1px 1px;
+  color: #de4949;
+}
+.r_box li h3 a {
+  color: #222;
 }
 @keyframes slidetop {
   from {top:20px;opacity: 0}

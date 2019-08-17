@@ -112,6 +112,7 @@ export default {
 .router-link-active{
   /*background: #4AF2A1;*/
   /*color: #ADFFD5*/
-  color: #f56c6c;
+  /*color: #f56c6c;*/
+  color: #f65a8a;
 }
 </style>
