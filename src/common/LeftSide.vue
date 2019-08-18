@@ -4,7 +4,7 @@
       <h2>关于我</h2>
       <ul>
         <i><img src="../../static/images/123.jpg"></i>
-        <p><strongr> 一个95后程序员</strongr></p>
+        <p><strongr> 杀人放火金腰带，修桥补路无尸骸</strongr></p>
       </ul>
     </div>
     <div ref="fix_position" class="fixedSide" id="fixedSide">
