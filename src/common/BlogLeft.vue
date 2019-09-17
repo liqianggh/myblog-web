@@ -53,7 +53,7 @@
     <div class="guanzhu">
       <h2>关注我 么么哒</h2>
       <ul>
-        <img src="../../static/images/wx.jpg">
+        <!--<img src="../../static/images/wx.jpg">-->
       </ul>
     </div>
   </aside>

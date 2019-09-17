@@ -23,8 +23,8 @@
 #nextArrow { right: 0px; }
 .contextDiv { cursor: pointer; height: 100%; width: 50%; position: absolute; top: 0px; z-index: 5; }
 .contextDiv span { position: absolute; top: 50%; margin-top: -10%; width: 46px; height: 80px; }
-#preArrow_A { left: 0px; background: url('../../../static/images/left.png') 0px 0px no-repeat; display: none; }
-#nextArrow_A { right: 0px; background: url('../../../static/images/right.png') 0px 0px no-repeat; display: none; }
+#preArrow_A { left: 0px; background: url('http://source.mycookies.cn/left.png') 0px 0px no-repeat; display: none; }
+#nextArrow_A { right: 0px; background: url('http://source.mycookies.cn/right.png') 0px 0px no-repeat; display: none; }
 .picshowtxt { min-height: 40px; _height: 40px; }
 .picshowtxt_left { float: left; width: 50px; height: 50px; line-height: 50px; font-family: Georgia, "Times New Roman", Times, serif; }
 .picshowtxt_left span { color: #e55656; font-size: 30px; }
@@ -81,8 +81,8 @@ a.gaoqing:hover { color: #FF702D; text-decoration: underline; }
 .returnbtn a:hover { color: #FF702D; text-decoration: underline; border: 1px solid #8d5a00; }
 .firsttop { padding: 20px; background: #1C1C1C; position: absolute; top: 40%; left: 10%; z-index: 1200; color: White; display: none; }
 .endtop { padding: 20px; background: #1C1C1C; position: absolute; top: 40%; left: 10%; z-index: 1200; color: White; display: none; }
-.sleft { display: block; width: 23px; height: 76px; background: #efefef url(../../../static/images/left1.jpg) no-repeat center }
-.sright { display: block; width: 23px; height: 76px; background: #efefef url(../../../static/images/right1.jpg) no-repeat center }
+.sleft { display: block; width: 23px; height: 76px; background: #efefef url(http://source.mycookies.cn/left1.jpg) no-repeat center }
+.sright { display: block; width: 23px; height: 76px; background: #efefef url(http://source.mycookies.cn/right1.jpg) no-repeat center }
 .pictext ul { padding: 20px }
 .diggit { width: 160px; margin: auto; background: #E2523A; color: #fff; box-shadow: 1px 2px 6px 0px rgba(0,0,0,.2); border-radius: 3px; line-height: 40px; text-align: center; }
 .diggit a { color: #fff; }

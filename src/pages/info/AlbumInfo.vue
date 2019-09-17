@@ -42,18 +42,18 @@
             <div class="picmidleft"> <a href="javascript:void(0)" id="preArrow_B"><span class="sleft"></span></a> </div>
             <div class="picmidmid">
               <ul>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/1.jpg" alt="" bigimg="../../../static/images/1.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/2.jpg" alt="" bigimg="../../../static/images/2.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/3.jpg" alt="" bigimg="../../../static/images/3.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/4.jpg" alt="" bigimg="../../../static/images/4.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/5.jpg" alt="" bigimg="../../../static/images/5.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/6.jpg" alt="" bigimg="../../../static/images/6.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/7.jpg" alt="" bigimg="../../../static/images/7.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/8.jpg" alt="" bigimg="../../../static/images/8.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/9.jpg" alt="" bigimg="../../../static/images/9.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/10.jpg" alt="" bigimg="../../../static/images/10.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/11.jpg" alt="" bigimg="../../../static/images/11.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
-                <li> <a href="javascript:void(0);"><img src="../../../static/images/12.jpg" alt="" bigimg="../../../static/images/12.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/1.jpg" alt="" bigimg="../../../static/images/1.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/2.jpg" alt="" bigimg="../../../static/images/2.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/3.jpg" alt="" bigimg="../../../static/images/3.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/4.jpg" alt="" bigimg="../../../static/images/4.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/5.jpg" alt="" bigimg="../../../static/images/5.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/6.jpg" alt="" bigimg="../../../static/images/6.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/7.jpg" alt="" bigimg="../../../static/images/7.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/8.jpg" alt="" bigimg="../../../static/images/8.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/9.jpg" alt="" bigimg="../../../static/images/9.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/10.jpg" alt="" bigimg="../../../static/images/10.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/11.jpg" alt="" bigimg="../../../static/images/11.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
+                <!--<li> <a href="javascript:void(0);"><img src="../../../static/images/12.jpg" alt="" bigimg="../../../static/images/12.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女" /></a></li>-->
               </ul>
             </div>
             <div class="picmidright"> <a href="javascript:void(0)" id="nextArrow_B"><span class="sright"></span></a> </div>
@@ -62,83 +62,83 @@
       </div>
 
       <!--列表展示-->
-      <div class="piclistshow">
-        <ul>
-          <li>
-            <div class="picimg"><img src="../../../static/images/1.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(1/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/2.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(2/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/3.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(3/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/4.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(4/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/5.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(5/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/6.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(6/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/7.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(7/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/8.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(8/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/9.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(9/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/10.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(10/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/11.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(11/12)</span></h3>
-            </div>
-          </li>
-          <li>
-            <div class="picimg"><img src="../../../static/images/12.jpg" alt="" /></div>
-            <div class="pictxt">
-              <h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(12/12)</span></h3>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <!--<div class="piclistshow">-->
+        <!--<ul>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/1.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(1/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/2.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(2/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/3.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(3/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/4.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(4/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/5.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(5/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/6.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(6/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/7.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(7/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/8.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(8/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/9.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(9/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/10.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(10/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/11.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(11/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="picimg"><img src="../../../static/images/12.jpg" alt="" /></div>-->
+            <!--<div class="pictxt">-->
+              <!--<h3>《古剑》小师妹迪丽热巴清新写真宛若小仙女<span>(12/12)</span></h3>-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
     <div class="pictext">
       <ul>
         游览普陀山一天时间足够了，如果考虑到还要来还愿，那就没必要一次把所有的地方都去到，如果只是单纯的旅游，那就把最重要的地方看看就可以了，普陀山并不是以景色著称的。普陀山上住宿餐饮价格都非常贵，住宿还好说，毕竟供不应求嘛，尤其是节假日，想要提前预定都不一定有房间，餐饮更是离谱，一般都是岛外四五倍的价格。所以建议大家像我们一样住在朱家尖，莲花路是朱家尖镇的中心，比较繁华热闹，住宿餐饮都集中在那里，岛上游玩去庙里体验素斋就可以啦。

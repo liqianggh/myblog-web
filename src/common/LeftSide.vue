@@ -3,7 +3,7 @@
     <div class="about_me">
       <h2>关于我</h2>
       <ul>
-        <i><img src="../../static/images/123.jpg"></i>
+        <i><img src="http://source.mycookies.cn/201909172353_153.jpg"></i>
         <p><strongr> 杀人放火金腰带，修桥补路无尸骸</strongr></p>
       </ul>
     </div>
